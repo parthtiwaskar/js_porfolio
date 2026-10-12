@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="MedNova preview">
+  <rect width="900" height="600" fill="#0b0d0b"/>
+  <rect x="70" y="90" width="760" height="420" rx="22" fill="#101511" stroke="#243326"/>
+  <rect x="110" y="126" width="680" height="52" rx="12" fill="#171b17"/>
+  <circle cx="160" cy="152" r="8" fill="#59AE17"/>
+  <circle cx="188" cy="152" r="8" fill="#dce7d2" opacity="0.5"/>
+  <circle cx="216" cy="152" r="8" fill="#dce7d2" opacity="0.3"/>
+  <rect x="110" y="205" width="250" height="240" rx="18" fill="#0f130f" stroke="#243326"/>
+  <rect x="392" y="205" width="398" height="90" rx="18" fill="#111611" stroke="#243326"/>
+  <rect x="392" y="314" width="398" height="131" rx="18" fill="#111611" stroke="#243326"/>
+  <path d="M148 310c29-36 60-52 100-52 54 0 92 40 120 72v88H148v-108z" fill="#59AE17" opacity="0.2"/>
+  <circle cx="185" cy="286" r="20" fill="#59AE17" opacity="0.8"/>
+  <path d="M242 252h44v94h-44zM205 292h118" stroke="#dfead8" stroke-width="8" fill="none" opacity="0.8"/>
+  <path d="M438 239h315" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M438 267h270" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.45"/>
+  <path d="M438 378h90" stroke="#59AE17" stroke-width="10" stroke-linecap="round"/>
+  <path d="M540 378h160" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+  <path d="M438 418h250" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+  <path d="M580 205v240" stroke="#59AE17" stroke-width="2" opacity="0.28"/>
+</svg>

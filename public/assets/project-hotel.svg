@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Hotel booking interface preview">
+  <rect width="900" height="600" fill="#0b0d0c"/>
+  <rect x="96" y="96" width="708" height="408" rx="26" fill="#111712" stroke="#27352a"/>
+  <rect x="142" y="148" width="236" height="276" rx="18" fill="#181f19"/>
+  <rect x="410" y="148" width="342" height="96" rx="18" fill="#141b16"/>
+  <rect x="410" y="264" width="342" height="160" rx="18" fill="#141b16"/>
+  <circle cx="196" cy="222" r="48" fill="#59AE17" opacity="0.6"/>
+  <path d="M164 318h64" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+  <path d="M160 342h72" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+  <path d="M452 180h230" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  <path d="M452 206h170" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+  <rect x="448" y="296" width="128" height="80" rx="12" fill="#59AE17" opacity="0.75"/>
+  <rect x="596" y="296" width="120" height="80" rx="12" fill="#dfead8" opacity="0.15"/>
+  <path d="M446 388h250" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+</svg>

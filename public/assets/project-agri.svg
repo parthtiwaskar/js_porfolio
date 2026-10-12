@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Agriculture AI preview">
+  <rect width="900" height="600" fill="#0b0d09"/>
+  <rect x="100" y="120" width="700" height="360" rx="26" fill="#101510" stroke="#2b3728"/>
+  <path d="M170 416c68-111 120-164 178-164 63 0 96 52 140 52 52 0 80-64 128-64 56 0 94 76 126 176H170z" fill="#59AE17" opacity="0.18"/>
+  <path d="M174 410c60-85 103-132 153-132 46 0 81 36 112 74 30 38 64 64 109 64 47 0 85-27 118-71 22 65 33 106 37 140H174z" fill="#59AE17" opacity="0.76"/>
+  <circle cx="230" cy="190" r="28" fill="#dfead8" opacity="0.9"/>
+  <circle cx="532" cy="222" r="26" fill="#dfead8" opacity="0.7"/>
+  <circle cx="690" cy="198" r="30" fill="#59AE17" opacity="0.9"/>
+  <path d="M170 142h250" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M170 172h190" stroke="#dfead8" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+</svg>

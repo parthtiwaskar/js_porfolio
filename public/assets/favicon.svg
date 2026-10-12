@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PT monogram">
+  <rect width="128" height="128" rx="26" fill="#0B0B0B"/>
+  <path d="M38 94V34h18v22l16-22h18l-18 24 18 36h-18l-12-24-6 8v16H38zm12-12h6V46h-6v36z" fill="#59AE17"/>
+  <circle cx="96" cy="34" r="7" fill="#F3F3EF" fill-opacity="0.25"/>
+</svg>

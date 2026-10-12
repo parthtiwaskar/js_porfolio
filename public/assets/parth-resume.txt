@@ -1,0 +1,5 @@
+Resume placeholder for Parth Tiwaskar.
+
+Update this file or replace the resume link in the portfolio data when the final resume is ready.
+
+Currently, the portfolio is configured to use a local placeholder while the personal resume is being prepared.

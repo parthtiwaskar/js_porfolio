@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="RescueNet AI preview">
+  <rect width="900" height="600" fill="#0a0d0c"/>
+  <rect x="90" y="110" width="720" height="380" rx="26" fill="#101412" stroke="#29362e"/>
+  <path d="M175 388h542L639 234l-96 84-94-128-109 120-98 90z" fill="#59AE17" opacity="0.2"/>
+  <path d="M225 370l78-120 90 82 110-146 102 149 96-128" stroke="#59AE17" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="225" cy="370" r="16" fill="#dfead8"/>
+  <circle cx="303" cy="250" r="16" fill="#dfead8"/>
+  <circle cx="393" cy="332" r="16" fill="#dfead8"/>
+  <circle cx="503" cy="186" r="16" fill="#dfead8"/>
+  <circle cx="605" cy="335" r="16" fill="#dfead8"/>
+  <rect x="170" y="140" width="160" height="50" rx="12" fill="#181d1a"/>
+  <circle cx="206" cy="165" r="9" fill="#59AE17"/>
+  <path d="M228 165h92" stroke="#dfead8" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+</svg>
