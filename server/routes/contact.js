@@ -1,7 +1,7 @@
-const express = require('express');
-const { body, validationResult } = require('express-validator');
-const nodemailer = require('nodemailer');
-const rateLimit = require('express-rate-limit');
+const express = require("express");
+const { body, validationResult } = require("express-validator");
+const nodemailer = require("nodemailer");
+const rateLimit = require("express-rate-limit");
 
 const router = express.Router();
 const recentSubmissions = new Map();
@@ -9,10 +9,10 @@ const recentSubmissions = new Map();
 const isEmailConfigured = () => {
   return Boolean(
     process.env.EMAIL_HOST &&
-      process.env.EMAIL_PORT &&
-      process.env.EMAIL_USER &&
-      process.env.EMAIL_PASS &&
-      process.env.CONTACT_TO
+    process.env.EMAIL_PORT &&
+    process.env.EMAIL_USER &&
+    process.env.EMAIL_PASS &&
+    process.env.CONTACT_TO,
   );
 };
 
@@ -36,6 +36,25 @@ const sendContactMail = async ({ name, email, subject, message }) => {
   });
 };
 
+const sendVisitMail = async ({ ipAddress, visitedAt }) => {
+  const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT || 587),
+    secure: Number(process.env.EMAIL_PORT || 587) === 465,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  return transporter.sendMail({
+    from: process.env.EMAIL_USER,
+    to: process.env.CONTACT_TO,
+    subject: "Portfolio visit notification",
+    text: `A visitor chose to share their visit.\nIP address: ${ipAddress}\nVisited at: ${visitedAt}`,
+  });
+};
+
 const rateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,
@@ -43,38 +62,92 @@ const rateLimiter = rateLimit({
   legacyHeaders: false,
   message: {
     success: false,
-    message: 'Too many requests. Please try again in a few minutes.',
+    message: "Too many requests. Please try again in a few minutes.",
+  },
+});
+
+const visitRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 1,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message:
+      "A visit notification was already sent from this connection recently.",
   },
 });
 
 router.use(rateLimiter);
 
+router.post(
+  "/visit",
+  (req, res, next) => {
+    if (req.body.consent !== true) {
+      return res.status(400).json({
+        success: false,
+        message: "Explicit consent is required to send a visit notification.",
+      });
+    }
+
+    return next();
+  },
+  visitRateLimiter,
+  async (req, res) => {
+    if (!isEmailConfigured()) {
+      return res.status(503).json({
+        success: false,
+        message: "Visit notifications are not configured yet.",
+      });
+    }
+
+    try {
+      await sendVisitMail({
+        ipAddress: req.ip,
+        visitedAt: new Date().toISOString(),
+      });
+
+      return res.status(200).json({
+        success: true,
+        message: "Your visit notification was sent to Sanika.",
+      });
+    } catch (error) {
+      console.error("Visit notification delivery failure:", error);
+
+      return res.status(500).json({
+        success: false,
+        message: "Something went wrong while sending the visit notification.",
+      });
+    }
+  },
+);
+
 const contactValidation = [
-  body('name')
+  body("name")
     .trim()
     .isLength({ min: 2, max: 80 })
-    .withMessage('Name must be between 2 and 80 characters.'),
-  body('email')
+    .withMessage("Name must be between 2 and 80 characters."),
+  body("email")
     .trim()
     .isEmail()
-    .withMessage('Please provide a valid email address.'),
-  body('subject')
+    .withMessage("Please provide a valid email address."),
+  body("subject")
     .trim()
     .isLength({ min: 2, max: 140 })
-    .withMessage('Subject must be between 2 and 140 characters.'),
-  body('message')
+    .withMessage("Subject must be between 2 and 140 characters."),
+  body("message")
     .trim()
     .isLength({ min: 10, max: 2000 })
-    .withMessage('Message must be between 10 and 2000 characters.'),
+    .withMessage("Message must be between 10 and 2000 characters."),
 ];
 
-router.post('/', ...contactValidation, async (req, res) => {
+router.post("/", ...contactValidation, async (req, res) => {
   const honeypot = req.body.website || req.body.company || req.body.honeypot;
 
   if (honeypot) {
     return res.status(400).json({
       success: false,
-      message: 'Your submission could not be processed.',
+      message: "Your submission could not be processed.",
     });
   }
 
@@ -87,14 +160,15 @@ router.post('/', ...contactValidation, async (req, res) => {
   }
 
   const { name, email, subject, message } = req.body;
-  const dedupeKey = `${(email || '').trim().toLowerCase()}|${(subject || '').trim().toLowerCase()}`;
+  const dedupeKey = `${(email || "").trim().toLowerCase()}|${(subject || "").trim().toLowerCase()}`;
   const now = Date.now();
   const lastSubmission = recentSubmissions.get(dedupeKey) || 0;
 
   if (now - lastSubmission < 30000) {
     return res.status(429).json({
       success: false,
-      message: 'This message was already submitted recently. Please try again in a moment.',
+      message:
+        "This message was already submitted recently. Please try again in a moment.",
     });
   }
 
@@ -104,7 +178,8 @@ router.post('/', ...contactValidation, async (req, res) => {
     if (!isEmailConfigured()) {
       return res.status(503).json({
         success: false,
-        message: 'Email delivery is not configured yet. Add SMTP credentials in the environment to enable the contact form.',
+        message:
+          "Email delivery is not configured yet. Add SMTP credentials in the environment to enable the contact form.",
       });
     }
 
@@ -112,14 +187,16 @@ router.post('/', ...contactValidation, async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: 'Thanks for reaching out. Your message has been sent successfully.',
+      message:
+        "Thanks for reaching out. Your message has been sent successfully.",
     });
   } catch (error) {
-    console.error('Contact form delivery failure:', error);
+    console.error("Contact form delivery failure:", error);
 
     return res.status(500).json({
       success: false,
-      message: 'Something went wrong while sending your message. Please try again later.',
+      message:
+        "Something went wrong while sending your message. Please try again later.",
     });
   }
 });

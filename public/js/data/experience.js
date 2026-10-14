@@ -1,31 +1,31 @@
 window.portfolioData = window.portfolioData || {};
 window.portfolioData.experience = [
   {
-    role: 'Computer Science Engineering Student',
-    organization: 'Student / Independent Learning',
-    period: 'Current',
+    role: "Product concept development",
+    organization: "Independent portfolio work",
+    period: "Ongoing",
     description:
-      'Building a foundation in software engineering, systems thinking, and product development while exploring the practical use of AI in real-world applications.',
+      "Shaping early-stage ideas into clear user journeys, feature outlines, and practical interface concepts across career, finance, and education tools.",
   },
   {
-    role: 'Founder',
-    organization: 'Astraon Labs',
-    period: 'Current',
+    role: "AI Resume Analyzer",
+    organization: "Career tools concept",
+    period: "Concept",
     description:
-      'Leading early-stage product exploration and experimentation, with a focus on practical AI systems and meaningful problem solving.',
+      "Exploring a transparent resume review experience that connects job requirements to evidence in a candidate’s own experience.",
   },
   {
-    role: 'Product Development',
-    organization: 'MedNova',
-    period: 'In progress',
+    role: "Smart Expense Tracker",
+    organization: "Personal finance concept",
+    period: "Concept",
     description:
-      'Developing AI-driven healthcare tooling designed to support clinical documentation and streamline operational workflows.',
+      "Planning a spending dashboard for budgets, recurring expenses, editable categories, and clear month-to-month comparisons.",
   },
   {
-    role: 'Technical Projects & Experiments',
-    organization: 'Independent',
-    period: 'Ongoing',
+    role: "AI Study Assistant",
+    organization: "Education concept",
+    period: "Concept",
     description:
-      'Building AI prototypes, web experiences, and product ideas that test what is technically feasible and practically useful.',
+      "Exploring source-grounded study support that turns a learner’s notes into explanations, practice questions, and review prompts.",
   },
 ];

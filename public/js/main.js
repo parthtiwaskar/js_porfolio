@@ -19,12 +19,15 @@ function setResumeState() {
 
   if (profile.resumeUrl) {
     resumeLink.href = profile.resumeUrl;
-    resumeLink.setAttribute("download", "Parth-Tiwaskar-Resume");
+    resumeLink.setAttribute(
+      "download",
+      `${profile.name || "Portfolio"}-Resume`.replace(/\s+/g, "-"),
+    );
     resumeLink.textContent = profile.resumeLabel || "Resume";
     resumeLink.setAttribute("aria-label", "Download resume");
   } else {
     resumeLink.href = "#";
-    resumeLink.textContent = "Resume coming soon";
+    resumeLink.textContent = "Resume unavailable";
     resumeLink.setAttribute("aria-disabled", "true");
     resumeLink.addEventListener("click", (event) => event.preventDefault());
   }
@@ -33,6 +36,17 @@ function setResumeState() {
 function renderSkills() {
   const container = document.getElementById("skills-grid");
   if (!container) return;
+
+  if (!Object.values(skills).some((items) => items.length)) {
+    container.appendChild(
+      createElement(
+        "p",
+        "portfolio-empty",
+        "Skills and interests will be added here.",
+      ),
+    );
+    return;
+  }
 
   const skillSections = [
     { title: "Programming Languages", items: skills.languages || [] },
@@ -63,6 +77,13 @@ function renderInterests() {
   const container = document.getElementById("interest-list");
   if (!container) return;
 
+  if (!(skills.interests || []).length) {
+    container.appendChild(
+      createElement("li", "", "Interests will be added here."),
+    );
+    return;
+  }
+
   (skills.interests || []).forEach((item) => {
     const li = createElement("li", "", item);
     container.appendChild(li);
@@ -72,6 +93,17 @@ function renderInterests() {
 function renderProjects() {
   const container = document.getElementById("projects-grid");
   if (!container) return;
+
+  if (!projects.length) {
+    container.appendChild(
+      createElement(
+        "p",
+        "portfolio-empty",
+        "Selected projects will be added here.",
+      ),
+    );
+    return;
+  }
 
   projects.forEach((project) => {
     const card = createElement("article", "project-card");
@@ -142,6 +174,13 @@ function renderExperience() {
   const container = document.getElementById("experience-list");
   if (!container) return;
 
+  if (!experience.length) {
+    container.appendChild(
+      createElement("p", "portfolio-empty", "Experience will be added here."),
+    );
+    return;
+  }
+
   experience.forEach((item) => {
     const timelineItem = createElement("div", "timeline-item");
     const marker = createElement("div", "timeline-marker");
@@ -206,7 +245,7 @@ function renderCurrentFocus() {
     "",
     currentFocus.label || "Now / exploring",
   );
-  const strong = createElement("strong", "", "Building useful things.");
+  const strong = createElement("strong", "", "Small ideas. Useful outcomes.");
   const meta = createElement(
     "p",
     "",
@@ -238,7 +277,7 @@ function renderProfileImage() {
   if (preferredImage) {
     const img = document.createElement("img");
     img.src = preferredImage;
-    img.alt = "Parth Tiwaskar portrait";
+    img.alt = `${profile.name || "Profile"} portrait`;
     img.className = "profile-image";
     img.onerror = () => {
       img.src = fallbackImage;
@@ -276,6 +315,7 @@ function renderContactLinks() {
 
   const directEmail = document.getElementById("direct-email");
   if (directEmail) {
+    directEmail.hidden = !profile.email;
     directEmail.href = profile.email ? `mailto:${profile.email}` : "#contact";
     directEmail.setAttribute("aria-disabled", profile.email ? "false" : "true");
   }
@@ -571,6 +611,38 @@ function initForm() {
   });
 }
 
+function initVisitNotification() {
+  const button = document.getElementById("visit-notify-button");
+  const status = document.getElementById("visit-notice-status");
+  if (!button || !status) return;
+
+  button.addEventListener("click", async () => {
+    button.disabled = true;
+    status.textContent = "Sending your visit notification...";
+    status.className = "visit-notice-status";
+
+    try {
+      const response = await fetch("/api/contact/visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ consent: true }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to send the notification.");
+      }
+
+      status.textContent = result.message || "Visit notification sent.";
+      status.className = "visit-notice-status success";
+    } catch (error) {
+      status.textContent = error.message || "Unable to send the notification.";
+      status.className = "visit-notice-status error";
+      button.disabled = false;
+    }
+  });
+}
+
 function initSite() {
   setResumeState();
   renderSkills();
@@ -587,6 +659,7 @@ function initSite() {
   initHeroAnimations();
   initHeroCanvas();
   initForm();
+  initVisitNotification();
   document.getElementById("year").textContent = new Date().getFullYear();
 }
 

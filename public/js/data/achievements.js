@@ -1,18 +1,21 @@
 window.portfolioData = window.portfolioData || {};
 window.portfolioData.achievements = [
   {
-    title: 'Portfolio in progress',
-    organization: 'Independent',
-    description: 'Building a curated personal brand and a technical portfolio that reflects product thinking, engineering depth, and AI experimentation.',
+    title: "Three product concepts defined",
+    organization: "Portfolio milestone",
+    description:
+      "Outlined distinct product directions for career support, personal finance, and independent learning.",
   },
   {
-    title: 'Startup exploration',
-    organization: 'Astraon Labs',
-    description: 'Exploring early-stage problem validation, product direction, and AI-first execution in pursuit of meaningful solutions.',
+    title: "Privacy-first visitor sharing",
+    organization: "Portfolio feature",
+    description:
+      "Added an explicit opt-in before a visitor’s IP address and visit time can be emailed to the portfolio owner.",
   },
   {
-    title: 'Product-focused learning',
-    organization: 'Self-directed',
-    description: 'Continuing to develop software and AI projects with an emphasis on usefulness, clarity, and real-world application.',
+    title: "A connected portfolio foundation",
+    organization: "Portfolio milestone",
+    description:
+      "Brought project concepts, skills, current interests, and project milestones together in one responsive experience.",
   },
 ];

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">AI Resume Builder interface concept</title>
+  <desc id="desc">A resume editor beside an AI-powered feedback panel.</desc>
+  <rect width="1200" height="800" fill="#e9ece5"/>
+  <path d="M0 650 1200 470v330H0Z" fill="#dce5d3"/>
+  <rect x="78" y="72" width="1044" height="656" rx="18" fill="#f8f8f4" stroke="#c9cec5" stroke-width="3"/>
+  <path d="M78 90a18 18 0 0 1 18-18h1008a18 18 0 0 1 18 18v56H78Z" fill="#222820"/>
+  <circle cx="112" cy="108" r="8" fill="#d9e7ce"/>
+  <circle cx="140" cy="108" r="8" fill="#9fbd8c"/>
+  <circle cx="168" cy="108" r="8" fill="#6da34d"/>
+  <text x="210" y="116" fill="#f3f4ef" font-family="Arial, sans-serif" font-size="20" font-weight="700">PROFILE / RESUME BUILDER</text>
+  <rect x="930" y="91" width="150" height="34" rx="5" fill="#84bd61"/>
+  <text x="963" y="114" fill="#13200f" font-family="Arial, sans-serif" font-size="14" font-weight="700">EXPORT PDF</text>
+  <rect x="110" y="180" width="600" height="500" rx="8" fill="#fff" stroke="#d9ddd6" stroke-width="2"/>
+  <rect x="146" y="216" width="106" height="106" rx="53" fill="#dde9d4"/>
+  <circle cx="199" cy="249" r="22" fill="#76966a"/>
+  <path d="M163 305c5-28 67-28 72 0" fill="#76966a"/>
+  <text x="286" y="252" fill="#252b23" font-family="Arial, sans-serif" font-size="32" font-weight="700">YOUR NAME</text>
+  <text x="286" y="282" fill="#778071" font-family="Arial, sans-serif" font-size="16">Product Designer · Software Engineer</text>
+  <path d="M146 348h526" stroke="#dfe3dc" stroke-width="2"/>
+  <text x="146" y="388" fill="#54883b" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">PROFESSIONAL SUMMARY</text>
+  <rect x="146" y="406" width="492" height="10" rx="5" fill="#dce1da"/>
+  <rect x="146" y="428" width="460" height="10" rx="5" fill="#e4e7e1"/>
+  <rect x="146" y="450" width="476" height="10" rx="5" fill="#e4e7e1"/>
+  <text x="146" y="504" fill="#54883b" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">EXPERIENCE</text>
+  <circle cx="154" cy="536" r="5" fill="#84bd61"/>
+  <rect x="174" y="530" width="226" height="11" rx="5" fill="#c9d1c4"/>
+  <rect x="174" y="552" width="446" height="9" rx="4" fill="#e4e7e1"/>
+  <rect x="174" y="571" width="418" height="9" rx="4" fill="#e4e7e1"/>
+  <circle cx="154" cy="614" r="5" fill="#84bd61"/>
+  <rect x="174" y="608" width="198" height="11" rx="5" fill="#c9d1c4"/>
+  <rect x="174" y="630" width="438" height="9" rx="4" fill="#e4e7e1"/>
+  <rect x="746" y="180" width="338" height="500" rx="8" fill="#20271f"/>
+  <circle cx="790" cy="224" r="18" fill="#84bd61"/>
+  <path d="m782 224 6 6 11-13" fill="none" stroke="#172113" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="820" y="231" fill="#f1f3ed" font-family="Arial, sans-serif" font-size="21" font-weight="700">AI REVIEW</text>
+  <text x="782" y="280" fill="#b9c4b3" font-family="Arial, sans-serif" font-size="14" letter-spacing="1">ROLE MATCH</text>
+  <text x="782" y="337" fill="#f3f4ef" font-family="Arial, sans-serif" font-size="44" font-weight="700">82%</text>
+  <rect x="782" y="356" width="262" height="8" rx="4" fill="#424b3f"/>
+  <rect x="782" y="356" width="215" height="8" rx="4" fill="#84bd61"/>
+  <path d="M782 395h262" stroke="#424b3f" stroke-width="1"/>
+  <text x="782" y="433" fill="#84bd61" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1">STRONG MATCHES</text>
+  <text x="782" y="467" fill="#e2e6de" font-family="Arial, sans-serif" font-size="15">✓  Relevant experience</text>
+  <text x="782" y="497" fill="#e2e6de" font-family="Arial, sans-serif" font-size="15">✓  Clear project outcomes</text>
+  <text x="782" y="527" fill="#e2e6de" font-family="Arial, sans-serif" font-size="15">✓  Required tools included</text>
+  <path d="M782 553h262" stroke="#424b3f" stroke-width="1"/>
+  <text x="782" y="589" fill="#e2bd77" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1">SUGGESTED NEXT STEP</text>
+  <text x="782" y="620" fill="#b9c4b3" font-family="Arial, sans-serif" font-size="13">Add a measurable result to your</text>
+  <text x="782" y="641" fill="#b9c4b3" font-family="Arial, sans-serif" font-size="13">most relevant experience bullet.</text>
+</svg>

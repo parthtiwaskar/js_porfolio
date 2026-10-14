@@ -1,52 +1,77 @@
 window.portfolioData = window.portfolioData || {};
 window.portfolioData.skills = {
   languages: [
-    { name: 'Python', description: 'Core scripting, AI workflows, and quick prototyping.' },
-    { name: 'JavaScript', description: 'Frontend logic, interfaces, and interactive experiences.' },
-    { name: 'HTML', description: 'Semantic structure and accessible web content.' },
-    { name: 'CSS', description: 'Responsive layouts, systems, and visual design.' },
-    { name: 'SQL', description: 'Data retrieval and database interaction patterns.' },
+    {
+      name: "JavaScript",
+      description: "Interactive web experiences and application logic.",
+    },
+    {
+      name: "Python",
+      description: "A flexible language for data and AI experiments.",
+    },
+    { name: "HTML", description: "Accessible, semantic page structure." },
+    { name: "CSS", description: "Responsive layouts and visual systems." },
   ],
   frontend: [
-    { name: 'HTML5', description: 'Modern semantic markup and structure.' },
-    { name: 'CSS3', description: 'Clean, responsive styling and component systems.' },
-    { name: 'JavaScript', description: 'Dynamic interfaces and client-side logic.' },
-    { name: 'Responsive Design', description: 'Layouts that adapt across device sizes.' },
-    { name: 'Component-driven Interfaces', description: 'Reusable UI patterns and structure.' },
-    { name: 'Animation & Interaction Design', description: 'Motion systems that feel intentional and smooth.' },
+    {
+      name: "React",
+      description: "Component-based interfaces for focused workflows.",
+    },
+    {
+      name: "Responsive UI",
+      description: "Layouts designed for both small and large screens.",
+    },
+    {
+      name: "Data visualization",
+      description: "Turning activity and progress into readable views.",
+    },
   ],
   backend: [
-    { name: 'Node.js', description: 'Server-side JavaScript runtime for web applications.' },
-    { name: 'Express.js', description: 'Backend routing and API development.' },
-    { name: 'REST APIs', description: 'Application interfaces and data exchange.' },
-    { name: 'Authentication', description: 'Protected user and access flows.' },
-    { name: 'Database Integration', description: 'Connecting applications to persisted data sources.' },
+    {
+      name: "Node.js",
+      description: "Server-side JavaScript for web applications.",
+    },
+    {
+      name: "Express",
+      description: "Routing and API foundations for web products.",
+    },
+    {
+      name: "REST APIs",
+      description: "Clear interfaces between clients and services.",
+    },
   ],
   ai: [
-    { name: 'Machine Learning Fundamentals', description: 'Core concepts and model intuition.' },
-    { name: 'Large Language Models', description: 'Prompting, model usage, and practical use cases.' },
-    { name: 'RAG', description: 'Retrieval-augmented generation and knowledge workflows.' },
-    { name: 'AI Agents', description: 'Agent-based orchestration and task decomposition.' },
-    { name: 'Prompt Engineering', description: 'Designing precise and useful AI interactions.' },
-    { name: 'Model Integration', description: 'Connecting models into product experiences.' },
-    { name: 'Speech-to-Text', description: 'Voice-driven input and conversational interfaces.' },
+    {
+      name: "LLM workflows",
+      description: "Structured assistance for writing, learning, and review.",
+    },
+    {
+      name: "Retrieval-augmented generation",
+      description: "Answers grounded in user-provided study material.",
+    },
+    {
+      name: "Document parsing",
+      description: "Extracting useful structure from resumes and notes.",
+    },
   ],
   infrastructure: [
-    { name: 'PostgreSQL', description: 'Relational data storage and querying.' },
-    { name: 'Firebase', description: 'Rapid application setup and cloud services.' },
-    { name: 'Git & GitHub', description: 'Version control and collaborative development.' },
-    { name: 'AWS Fundamentals', description: 'Cloud concepts and deployment basics.' },
-    { name: 'API Integration', description: 'Connecting systems and services together.' },
-    { name: 'Deployment & Debugging', description: 'Ship, validate, and troubleshoot real builds.' },
+    {
+      name: "PostgreSQL",
+      description: "Relational storage for budgets, activity, and progress.",
+    },
+    {
+      name: "CSV import",
+      description: "Bringing transaction data into a finance workflow.",
+    },
+    {
+      name: "Git",
+      description: "Version control for iterative product development.",
+    },
   ],
   interests: [
-    'Data Structures and Algorithms',
-    'Object-Oriented Programming',
-    'Database Management Systems',
-    'Operating Systems',
-    'Computer Networks',
-    'Software Engineering',
-    'Machine Learning',
-    'Generative AI and intelligent systems',
+    "Human-centered AI",
+    "Personal finance and data clarity",
+    "Learning tools and knowledge organization",
+    "Accessible, responsive interfaces",
   ],
 };
